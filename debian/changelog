@@ -1,3 +1,9 @@
+libpve-access-control (8.2.0-1) bookworm; urgency=medium
+
+  * api: add verify_root_api_key func
+
+ -- Lierfang Support Team <itsupport@lierfang.com>  Wed, 26 Feb 2025 09:45:09 +0800
+
 libpve-access-control (8.2.0) bookworm; urgency=medium
 
   * api: ACL update: fix regression where the Permissions.Modify handling

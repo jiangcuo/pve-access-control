@@ -2069,4 +2069,9 @@ sub complete_realm {
     return [ keys %{$domain_cfg->{ids}} ];
 }
 
+sub verify_root_api_key {
+    my ($authuser) = @_;
+    return $authuser =~ /^root\@pam!(?!.*@)/;
+}
+
 1;

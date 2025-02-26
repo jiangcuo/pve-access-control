@@ -1,7 +1,7 @@
 Source: libpve-access-control
 Section: perl
 Priority: optional
-Maintainer: Proxmox Support Team <support@proxmox.com>
+Maintainer: Lierfang Support Team <itsupport@lierfang.com>
 Build-Depends: debhelper-compat (= 13),
                libanyevent-perl,
                libauthen-pam-perl,
@@ -17,7 +17,7 @@ Build-Depends: debhelper-compat (= 13),
                pve-cluster (>= 6.1-4),
                pve-doc-generator (>= 5.3-3)
 Standards-Version: 4.6.2
-Homepage: https://www.proxmox.com
+Homepage: https://www.lierfang.com
 
 Package: libpve-access-control
 Architecture: all
