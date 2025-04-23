@@ -1223,15 +1223,15 @@ sub lookup_username {
     my $realm = $2;
     my $domain_cfg = cfs_read_file("domains.cfg");
     my $casesensitive = $domain_cfg->{ids}->{$realm}->{'case-sensitive'} // 1;
-    my $usercfg = cfs_read_file('user.cfg');
 
     if (!$casesensitive) {
+	my $usercfg = cfs_read_file('user.cfg');
 	my @matches = grep { lc $username eq lc $_ } (keys %{$usercfg->{users}});
 
 	die "ambiguous case insensitive match of username '$username', cannot safely grant access!\n"
 	    if scalar @matches > 1 && !$noerr;
 
-	return $matches[0]
+	return $matches[0] if defined($matches[0]);
     }
 
     return $username;
@@ -1293,7 +1293,7 @@ PVE::JSONSchema::register_format('pve-groupid', \&verify_groupname);
 sub verify_groupname {
     my ($groupname, $noerr) = @_;
 
-    if ($groupname !~ m/^[A-Za-z0-9\.\-_]+$/) {
+    if ($groupname !~ m/^[$PVE::Auth::Plugin::groupname_regex_chars]+$/) {
 
 	die "group name '$groupname' contains invalid characters\n" if !$noerr;
 
