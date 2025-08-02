@@ -1,3 +1,35 @@
+libpve-access-control (9.0.3) trixie; urgency=medium
+
+  * readme: update privileges
+
+  * add VM.Replicate privilege
+
+  * fix #6528: tfa: update user config on removal of TFA
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 30 Jul 2025 15:14:08 +0200
+
+libpve-access-control (9.0.2) trixie; urgency=medium
+
+  * privileges: drop VM.Monitor in favor of more granular VM.GuestAgent.*
+    privileges
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 17 Jul 2025 22:05:18 +0200
+
+libpve-access-control (9.0.1) trixie; urgency=medium
+
+  * drop unused old u2f code, it was replaced by the more generic WebAuthn
+    implementation.
+
+  * permissions: add ACL paths for SDN fabrics.
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 16 Jul 2025 23:28:51 +0200
+
+libpve-access-control (9.0.0) trixie; urgency=medium
+
+  * re-build for Debian 13 "Trixie" based Proxmox releases.
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 02 Jun 2025 19:35:27 +0200
+
 libpve-access-control (8.2.2) bookworm; urgency=medium
 
   * oidc: fix overly strict groups-claim regex enforced by API schema.
